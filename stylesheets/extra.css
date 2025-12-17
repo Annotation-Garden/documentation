@@ -1,6 +1,16 @@
 /* AGI Brand Colors for MkDocs Material */
 
-/* Custom primary color - Dark Teal #184A3D */
+/* Force header color - Dark Teal #184A3D */
+.md-header {
+  background-color: #184A3D !important;
+}
+
+/* Force navigation tabs color */
+.md-tabs {
+  background-color: #184A3D !important;
+}
+
+/* Custom primary color variables */
 [data-md-color-primary=custom] {
   --md-primary-fg-color: #184A3D;
   --md-primary-fg-color--light: #2A6B5A;
@@ -16,38 +26,49 @@
   --md-accent-bg-color: rgba(233, 152, 82, 0.1);
 }
 
-/* Dark mode adjustments */
-[data-md-color-scheme="slate"][data-md-color-primary=custom] {
-  --md-primary-fg-color: #2A6B5A;
-  --md-primary-fg-color--light: #387d6c;
-  --md-primary-fg-color--dark: #184A3D;
+/* Dark mode header */
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #123830 !important;
 }
 
-/* Links styling */
-[data-md-color-primary=custom] .md-typeset a {
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #123830 !important;
+}
+
+/* Links styling - Dark Teal */
+.md-typeset a {
   color: #184A3D;
 }
 
-[data-md-color-scheme="slate"][data-md-color-primary=custom] .md-typeset a {
+.md-typeset a:hover {
+  color: #E99852;
+}
+
+/* Dark mode links */
+[data-md-color-scheme="slate"] .md-typeset a {
   color: #74aa99;
 }
 
-.md-typeset a:hover {
-  color: var(--md-accent-fg-color);
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #E99852;
 }
 
 /* Navigation links in sidebar */
 .md-nav__link:hover {
-  color: var(--md-accent-fg-color);
+  color: #E99852;
 }
 
 .md-nav__link--active {
-  color: var(--md-primary-fg-color);
+  color: #184A3D;
 }
 
-/* Search highlight */
-.md-search-result__link:hover {
-  background-color: var(--md-accent-fg-color--transparent);
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: #74aa99;
+}
+
+/* Search bar styling */
+.md-search__input {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Code blocks */
@@ -65,7 +86,7 @@
 }
 
 .md-typeset .grid.cards > ul > li:hover {
-  border-color: var(--md-accent-fg-color);
+  border-color: #E99852;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -73,7 +94,7 @@
 .doc-object {
   margin-bottom: 2rem;
   padding: 1rem;
-  border-left: 4px solid var(--md-primary-fg-color);
+  border-left: 4px solid #184A3D;
   background-color: var(--md-code-bg-color);
 }
 
@@ -81,32 +102,23 @@
   font-weight: 600;
 }
 
-/* Admonition styling */
-.md-typeset .admonition.api {
-  border-color: var(--md-accent-fg-color);
-}
-
-.md-typeset .admonition.api > .admonition-title {
-  background-color: var(--md-accent-fg-color--transparent);
-}
-
 /* Navigation tabs active state */
 .md-tabs__link--active {
-  border-bottom: 2px solid var(--md-accent-fg-color);
+  border-bottom: 2px solid #E99852;
 }
 
 /* Footer links */
 .md-footer-meta a:hover {
-  color: var(--md-accent-fg-color);
+  color: #E99852;
 }
 
 /* Button styling */
 .md-button--primary {
-  background-color: var(--md-primary-fg-color);
-  border-color: var(--md-primary-fg-color);
+  background-color: #184A3D !important;
+  border-color: #184A3D !important;
 }
 
 .md-button--primary:hover {
-  background-color: var(--md-primary-fg-color--light);
-  border-color: var(--md-primary-fg-color--light);
+  background-color: #2A6B5A !important;
+  border-color: #2A6B5A !important;
 }

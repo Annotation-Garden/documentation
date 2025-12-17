@@ -1,0 +1,7 @@
+# Cloudflare Pages configuration for docs.annotation.garden
+
+name = "agi-documentation"
+pages_build_output_dir = "site"
+
+[build]
+command = "git clone --depth 1 https://github.com/Annotation-Garden/hedit.git ../hedit && git clone --depth 1 https://github.com/Annotation-Garden/image-annotation.git ../image-annotation && pip install . && mkdocs build"

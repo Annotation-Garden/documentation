@@ -14,15 +14,28 @@
   --md-primary-fg-color--dark:  #184A3D;
 }
 
-/* Links styling */
+/* Larger logo in header */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.4rem;
+  width: auto;
+}
+
+/* Adjust logo container */
+.md-header__button.md-logo {
+  padding: 0.2rem;
+}
+
+/* Links styling - lighter teal for better visibility in light mode */
 .md-typeset a {
-  color: #184A3D;
+  color: #2A6B5A;
 }
 
 .md-typeset a:hover {
   color: #E99852;
 }
 
+/* Dark mode links - already good */
 [data-md-color-scheme="slate"] .md-typeset a {
   color: #74aa99;
 }

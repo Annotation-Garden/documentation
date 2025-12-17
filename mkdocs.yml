@@ -69,7 +69,7 @@ plugins:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
       minify_html: true
-  # Auto-generate API documentation from Python code
+  - section-index
   - mkdocstrings:
       default_handler: python
       handlers:
@@ -82,22 +82,10 @@ plugins:
             show_source: true
             show_bases: true
             show_root_heading: true
-            show_root_toc_entry: true
-            show_symbol_type_heading: true
-            show_symbol_type_toc: true
             members_order: source
-            merge_init_into_class: true
-            separate_signature: true
-            signature_crossrefs: true
-            show_signature_annotations: true
-            annotations_path: brief
-  # Generate files during build
   - gen-files:
       scripts:
         - scripts/gen_ref_pages.py
-  # Section index pages
-  - section-index
-  # Literate navigation for auto-generated pages
   - literate-nav:
       nav_file: SUMMARY.md
 

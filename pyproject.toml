@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Documentation for the Annotation Garden Initiative"
 readme = "README.md"
 requires-python = ">=3.11"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "Annotation Garden Initiative", email = "info@annotation.garden"}
 ]
@@ -44,6 +44,14 @@ dev = [
 [build-system]
 requires = ["setuptools>=69.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# This is a documentation-only project, no Python packages
+py-modules = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = []
 
 [tool.ruff]
 line-length = 100

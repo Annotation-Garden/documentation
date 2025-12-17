@@ -1,69 +1,35 @@
 /* AGI Brand Colors for MkDocs Material */
 
-/* Light mode */
-[data-md-color-scheme="default"] {
-  /* Primary: Dark Teal #184A3D */
+/* Custom primary color - Dark Teal #184A3D */
+[data-md-color-primary=custom] {
   --md-primary-fg-color: #184A3D;
   --md-primary-fg-color--light: #2A6B5A;
   --md-primary-fg-color--dark: #123830;
   --md-primary-bg-color: #FFFFFF;
-  --md-primary-bg-color--light: #F8F9FA;
-
-  /* Accent: Warm Orange #E99852 */
-  --md-accent-fg-color: #E99852;
-  --md-accent-fg-color--transparent: rgba(233, 152, 82, 0.1);
-  --md-accent-bg-color: #FFFFFF;
-
-  /* Links use accent color */
-  --md-typeset-a-color: #184A3D;
-
-  /* Code highlighting */
-  --md-code-hl-color: rgba(233, 152, 82, 0.2);
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
 }
 
-/* Dark mode */
-[data-md-color-scheme="slate"] {
-  /* Lighter teal for dark mode visibility */
+/* Custom accent color - Warm Orange #E99852 */
+[data-md-color-accent=custom] {
+  --md-accent-fg-color: #E99852;
+  --md-accent-fg-color--transparent: rgba(233, 152, 82, 0.1);
+  --md-accent-bg-color: rgba(233, 152, 82, 0.1);
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"][data-md-color-primary=custom] {
   --md-primary-fg-color: #2A6B5A;
   --md-primary-fg-color--light: #387d6c;
   --md-primary-fg-color--dark: #184A3D;
-  --md-primary-bg-color: #1e1e1e;
-  --md-primary-bg-color--light: #2d2d2d;
-
-  /* Accent stays the same */
-  --md-accent-fg-color: #E99852;
-  --md-accent-fg-color--transparent: rgba(233, 152, 82, 0.15);
-
-  /* Links in dark mode */
-  --md-typeset-a-color: #74aa99;
-
-  /* Code highlighting */
-  --md-code-hl-color: rgba(233, 152, 82, 0.15);
 }
 
-/* Fallback for root */
-:root {
-  --md-primary-fg-color: #184A3D;
-  --md-primary-fg-color--light: #2A6B5A;
-  --md-primary-fg-color--dark: #123830;
-  --md-accent-fg-color: #E99852;
-  --md-accent-fg-color--transparent: rgba(233, 152, 82, 0.1);
-  --md-typeset-a-color: #184A3D;
+/* Links styling */
+[data-md-color-primary=custom] .md-typeset a {
+  color: #184A3D;
 }
 
-/* Header styling */
-.md-header {
-  background-color: var(--md-primary-fg-color);
-}
-
-/* Navigation tabs */
-.md-tabs {
-  background-color: var(--md-primary-fg-color);
-}
-
-/* Links */
-.md-typeset a {
-  color: var(--md-typeset-a-color);
+[data-md-color-scheme="slate"][data-md-color-primary=custom] .md-typeset a {
+  color: #74aa99;
 }
 
 .md-typeset a:hover {

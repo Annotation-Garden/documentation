@@ -60,3 +60,9 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["E", "W", "F", "I", "B", "UP"]
 ignore = ["E501"]
+
+[tool.codespell]
+# Ref: https://github.com/codespell-project/codespell#using-a-config-file
+skip = '.git*,*.svg,site/*,hedit/*,image-annotation/*'
+check-hidden = true
+# ignore-words-list = ''

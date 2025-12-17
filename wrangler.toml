@@ -1,0 +1,18 @@
+# Cloudflare Pages configuration for docs.annotation.garden
+# Note: Most configuration is done in the Cloudflare dashboard
+# This file is for reference and potential Wrangler CLI usage
+
+name = "agi-documentation"
+compatibility_date = "2024-12-01"
+
+# Pages configuration is primarily managed in the dashboard
+# Build settings:
+# - Build command: pip install -e . && mkdocs build
+# - Build output directory: site
+# - Root directory: documentation (if in monorepo)
+
+# Environment variables (set in dashboard):
+# - PYTHON_VERSION: 3.12
+
+# Custom domain: docs.annotation.garden
+# Configure in Cloudflare dashboard under Pages > Custom domains

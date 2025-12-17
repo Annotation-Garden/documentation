@@ -1,0 +1,181 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: Annotation Garden Documentation
+site_url: https://docs.annotation.garden
+site_author: Annotation Garden Initiative
+site_description: >-
+  Documentation for the Annotation Garden Initiative (AGI) - an open infrastructure
+  for collaborative annotation of neuroscience stimuli.
+
+repo_name: Annotation-Garden
+repo_url: https://github.com/Annotation-Garden
+
+copyright: Copyright &copy; 2024-2025 Annotation Garden Initiative
+
+theme:
+  name: material
+  custom_dir: overrides
+  favicon: assets/favicon.png
+  logo: assets/logo.png
+
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+  palette:
+    # Light mode - using AGI colors
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+  # Auto-generate API documentation from Python code
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths:
+            - ../hedit/src
+            - ../image-annotation/src
+          options:
+            docstring_style: google
+            show_source: true
+            show_bases: true
+            show_root_heading: true
+            show_root_toc_entry: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            members_order: source
+            merge_init_into_class: true
+            separate_signature: true
+            signature_crossrefs: true
+            show_signature_annotations: true
+            annotations_path: brief
+  # Generate files during build
+  - gen-files:
+      scripts:
+        - scripts/gen_ref_pages.py
+  # Section index pages
+  - section-index
+  # Literate navigation for auto-generated pages
+  - literate-nav:
+      nav_file: SUMMARY.md
+
+markdown_extensions:
+  # Python Markdown extensions
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+  # PyMdown extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Annotation-Garden
+    - icon: material/web
+      link: https://annotation.garden
+
+  # Version provider for mike
+  version:
+    provider: mike
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+  - Projects:
+    - projects/index.md
+    - HEDit:
+      - projects/hedit/index.md
+      - CLI Reference: projects/hedit/cli-reference.md
+      - API Reference: projects/hedit/api-reference.md
+      - Python API: projects/hedit/python-api.md
+    - Image Annotation:
+      - projects/image-annotation/index.md
+      - API Reference: projects/image-annotation/api-reference.md
+  - Standards:
+    - standards/index.md
+    - HED Guidelines: standards/hed-guidelines.md
+    - BIDS Integration: standards/bids-integration.md
+    - Annotation Format: standards/annotation-format.md
+  - Contributing:
+    - contributing/index.md
+    - Development Setup: contributing/development-setup.md
+    - Code Style: contributing/code-style.md

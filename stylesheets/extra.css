@@ -1,0 +1,65 @@
+/* AGI Brand Colors */
+:root {
+  /* Primary: Dark Teal #184A3D */
+  --md-primary-fg-color: #184A3D;
+  --md-primary-fg-color--light: #1e5c4d;
+  --md-primary-fg-color--dark: #123830;
+
+  /* Accent: Warm Orange #E99852 */
+  --md-accent-fg-color: #E99852;
+  --md-accent-fg-color--transparent: rgba(233, 152, 82, 0.1);
+
+  /* Secondary: Deep Purple #4B4967 */
+  --md-secondary-color: #4B4967;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #2a7a65;
+  --md-accent-fg-color: #E99852;
+}
+
+/* Custom styling for code blocks */
+.md-typeset code {
+  background-color: var(--md-code-bg-color);
+  border-radius: 0.2rem;
+}
+
+/* Grid cards styling */
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* API Reference styling */
+.doc-object {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 4px solid var(--md-primary-fg-color);
+  background-color: var(--md-code-bg-color);
+}
+
+.doc-object .doc-heading {
+  font-weight: 600;
+}
+
+/* Admonition styling */
+.md-typeset .admonition.api {
+  border-color: var(--md-accent-fg-color);
+}
+
+.md-typeset .admonition.api > .admonition-title {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+/* Navigation tabs */
+.md-tabs__link--active {
+  border-bottom: 2px solid var(--md-accent-fg-color);
+}

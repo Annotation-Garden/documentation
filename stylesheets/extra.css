@@ -1,41 +1,20 @@
-/* AGI Brand Colors for MkDocs Material */
-
-/* Force header color - Dark Teal #184A3D */
-.md-header {
-  background-color: #184A3D !important;
-}
-
-/* Force navigation tabs color */
-.md-tabs {
-  background-color: #184A3D !important;
-}
-
-/* Custom primary color variables */
-[data-md-color-primary=custom] {
-  --md-primary-fg-color: #184A3D;
+/* AGI Brand Colors - Dark Teal #184A3D, Warm Orange #E99852 */
+:root > * {
+  --md-primary-fg-color:        #184A3D;
   --md-primary-fg-color--light: #2A6B5A;
-  --md-primary-fg-color--dark: #123830;
-  --md-primary-bg-color: #FFFFFF;
-  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
-}
-
-/* Custom accent color - Warm Orange #E99852 */
-[data-md-color-accent=custom] {
-  --md-accent-fg-color: #E99852;
+  --md-primary-fg-color--dark:  #123830;
+  --md-accent-fg-color:         #E99852;
   --md-accent-fg-color--transparent: rgba(233, 152, 82, 0.1);
-  --md-accent-bg-color: rgba(233, 152, 82, 0.1);
 }
 
-/* Dark mode header */
-[data-md-color-scheme="slate"] .md-header {
-  background-color: #123830 !important;
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #2A6B5A;
+  --md-primary-fg-color--light: #387d6c;
+  --md-primary-fg-color--dark:  #184A3D;
 }
 
-[data-md-color-scheme="slate"] .md-tabs {
-  background-color: #123830 !important;
-}
-
-/* Links styling - Dark Teal */
+/* Links styling */
 .md-typeset a {
   color: #184A3D;
 }
@@ -44,7 +23,6 @@
   color: #E99852;
 }
 
-/* Dark mode links */
 [data-md-color-scheme="slate"] .md-typeset a {
   color: #74aa99;
 }
@@ -53,7 +31,7 @@
   color: #E99852;
 }
 
-/* Navigation links in sidebar */
+/* Navigation */
 .md-nav__link:hover {
   color: #E99852;
 }
@@ -66,18 +44,7 @@
   color: #74aa99;
 }
 
-/* Search bar styling */
-.md-search__input {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Code blocks */
-.md-typeset code {
-  background-color: var(--md-code-bg-color);
-  border-radius: 0.2rem;
-}
-
-/* Grid cards styling */
+/* Grid cards */
 .md-typeset .grid.cards > ul > li {
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 0.5rem;
@@ -98,27 +65,12 @@
   background-color: var(--md-code-bg-color);
 }
 
-.doc-object .doc-heading {
-  font-weight: 600;
-}
-
-/* Navigation tabs active state */
+/* Navigation tabs active */
 .md-tabs__link--active {
   border-bottom: 2px solid #E99852;
 }
 
-/* Footer links */
+/* Footer */
 .md-footer-meta a:hover {
   color: #E99852;
-}
-
-/* Button styling */
-.md-button--primary {
-  background-color: #184A3D !important;
-  border-color: #184A3D !important;
-}
-
-.md-button--primary:hover {
-  background-color: #2A6B5A !important;
-  border-color: #2A6B5A !important;
 }

@@ -75,8 +75,8 @@ plugins:
       handlers:
         python:
           paths:
-            - ../hedit
-            - ../image-annotation/src
+            - hedit
+            - image-annotation/src
           options:
             docstring_style: google
             show_source: true

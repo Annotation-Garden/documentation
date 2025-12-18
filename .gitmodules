@@ -1,6 +1,8 @@
 [submodule "hedit"]
 	path = hedit
 	url = https://github.com/Annotation-Garden/hedit.git
+	branch = main
 [submodule "image-annotation"]
 	path = image-annotation
 	url = https://github.com/Annotation-Garden/image-annotation.git
+	branch = main

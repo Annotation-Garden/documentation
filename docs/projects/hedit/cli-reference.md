@@ -58,6 +58,7 @@ hedit annotate DESCRIPTION [OPTIONS]
 | `--api-url` | | TEXT | | API endpoint URL |
 | `--model` | `-m` | TEXT | | Model to use for annotation |
 | `--eval-model` | | TEXT | | Model for evaluation/assessment agents (see below) |
+| `--eval-provider` | | TEXT | | Provider for evaluation model (e.g., Cerebras) |
 | `--provider` | | TEXT | | Provider preference (e.g., Cerebras) |
 | `--temperature` | `-t` | FLOAT | | LLM temperature |
 | `--schema` | `-s` | TEXT | 8.3.0 | HED schema version |
@@ -68,13 +69,14 @@ hedit annotate DESCRIPTION [OPTIONS]
 | `--api` | | BOOL | False | Use API backend (default) |
 | `--verbose` | `-v` | BOOL | False | Show detailed output |
 
-!!! info "About `--eval-model`"
-    The `--eval-model` option specifies a separate model for the evaluation, assessment, and feedback summarization agents. This is useful for:
+!!! info "About `--eval-model` and `--eval-provider`"
+    The `--eval-model` option specifies a separate model for the evaluation, assessment, and feedback summarization agents. The `--eval-provider` option allows specifying a different provider for the evaluation model. This is useful for:
 
-    - **Model benchmarking**: Use a consistent evaluator (e.g., `qwen/qwen3-235b-a22b`) across different annotation models for fair comparison
+    - **Model benchmarking**: Use a consistent evaluator (e.g., `qwen/qwen3-235b-a22b-2507` via Cerebras) across different annotation models for fair comparison
     - **Cost optimization**: Use a cheaper model for annotation and a more capable model for quality assessment
+    - **Speed optimization**: Use a fast provider like Cerebras for the evaluation model
 
-    When not specified, all agents use the same model as `--model`.
+    When not specified, all agents use the same model and provider as `--model` and `--provider`.
 
 **Examples:**
 
@@ -101,6 +103,7 @@ hedit annotate "..." --standalone
 hedit annotate "A monkey reaches for a reward" \
   --model openai/gpt-4o-mini \
   --eval-model qwen/qwen3-235b-a22b-2507 \
+  --eval-provider Cerebras \
   --standalone
 ```
 
@@ -128,6 +131,7 @@ hedit annotate-image IMAGE [OPTIONS]
 | `--api-key` | `-k` | TEXT | | OpenRouter API key |
 | `--model` | `-m` | TEXT | | Model to use for annotation |
 | `--eval-model` | | TEXT | | Model for evaluation/assessment agents |
+| `--eval-provider` | | TEXT | | Provider for evaluation model (e.g., Cerebras) |
 | `--provider` | | TEXT | | Provider preference (e.g., Cerebras) |
 | `--temperature` | `-t` | FLOAT | | LLM temperature |
 | `--schema` | `-s` | TEXT | 8.4.0 | HED schema version |
@@ -154,6 +158,7 @@ hedit annotate-image screen.png -o json > result.json
 hedit annotate-image nsd_image.png \
   --model openai/gpt-4o-mini \
   --eval-model qwen/qwen3-235b-a22b-2507 \
+  --eval-provider Cerebras \
   --standalone
 ```
 

@@ -56,14 +56,25 @@ hedit annotate DESCRIPTION [OPTIONS]
 |--------|-------|------|---------|-------------|
 | `--api-key` | `-k` | TEXT | | OpenRouter API key (or use env var) |
 | `--api-url` | | TEXT | | API endpoint URL |
-| `--model` | `-m` | TEXT | | Model to use |
-| `--provider` | | TEXT | | Provider preference |
+| `--model` | `-m` | TEXT | | Model to use for annotation |
+| `--eval-model` | | TEXT | | Model for evaluation/assessment agents (see below) |
+| `--provider` | | TEXT | | Provider preference (e.g., Cerebras) |
 | `--temperature` | `-t` | FLOAT | | LLM temperature |
 | `--schema` | `-s` | TEXT | 8.3.0 | HED schema version |
 | `--output` | `-o` | TEXT | text | Output format (text, json) |
 | `--max-attempts` | | INT | 5 | Maximum validation attempts |
 | `--assessment/--no-assessment` | | BOOL | False | Run completeness assessment |
+| `--standalone` | | BOOL | False | Run locally without backend |
+| `--api` | | BOOL | False | Use API backend (default) |
 | `--verbose` | `-v` | BOOL | False | Show detailed output |
+
+!!! info "About `--eval-model`"
+    The `--eval-model` option specifies a separate model for the evaluation, assessment, and feedback summarization agents. This is useful for:
+
+    - **Model benchmarking**: Use a consistent evaluator (e.g., `qwen/qwen3-235b-a22b`) across different annotation models for fair comparison
+    - **Cost optimization**: Use a cheaper model for annotation and a more capable model for quality assessment
+
+    When not specified, all agents use the same model as `--model`.
 
 **Examples:**
 
@@ -82,6 +93,15 @@ hedit annotate "..." --model gpt-4o-mini --temperature 0.2
 
 # With assessment enabled
 hedit annotate "A face image is shown" --assessment -v
+
+# Standalone mode (run locally without backend)
+hedit annotate "..." --standalone
+
+# Model benchmarking with consistent evaluator
+hedit annotate "A monkey reaches for a reward" \
+  --model openai/gpt-4o-mini \
+  --eval-model qwen/qwen3-235b-a22b-2507 \
+  --standalone
 ```
 
 ---
@@ -106,11 +126,16 @@ hedit annotate-image IMAGE [OPTIONS]
 |--------|-------|------|---------|-------------|
 | `--prompt` | | TEXT | | Custom prompt for vision model |
 | `--api-key` | `-k` | TEXT | | OpenRouter API key |
-| `--model` | `-m` | TEXT | | Model to use |
+| `--model` | `-m` | TEXT | | Model to use for annotation |
+| `--eval-model` | | TEXT | | Model for evaluation/assessment agents |
+| `--provider` | | TEXT | | Provider preference (e.g., Cerebras) |
+| `--temperature` | `-t` | FLOAT | | LLM temperature |
 | `--schema` | `-s` | TEXT | 8.4.0 | HED schema version |
 | `--output` | `-o` | TEXT | text | Output format |
 | `--max-attempts` | | INT | 5 | Maximum validation attempts |
 | `--assessment/--no-assessment` | | BOOL | False | Run completeness assessment |
+| `--standalone` | | BOOL | False | Run locally without backend |
+| `--api` | | BOOL | False | Use API backend (default) |
 | `--verbose` | `-v` | BOOL | False | Show detailed output |
 
 **Examples:**
@@ -124,6 +149,12 @@ hedit annotate-image photo.jpg --prompt "Describe the experimental setup"
 
 # JSON output
 hedit annotate-image screen.png -o json > result.json
+
+# Standalone mode with consistent evaluator for benchmarking
+hedit annotate-image nsd_image.png \
+  --model openai/gpt-4o-mini \
+  --eval-model qwen/qwen3-235b-a22b-2507 \
+  --standalone
 ```
 
 ---

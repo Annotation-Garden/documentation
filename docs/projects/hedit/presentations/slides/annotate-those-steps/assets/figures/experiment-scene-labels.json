@@ -1,0 +1,69 @@
+{
+  "width_mm": 240,
+  "labels": [
+    {
+      "text": "F_pull",
+      "x": 620,
+      "y": 290,
+      "color": "#DC2626",
+      "font_size_pt": 30,
+      "arrow_to": [340, 340]
+    },
+    {
+      "text": "EEG cap",
+      "x": 130,
+      "y": 70,
+      "color": "#184A3D",
+      "font_size_pt": 22,
+      "arrow_to": [185, 80]
+    },
+    {
+      "text": "safety harness",
+      "x": 120,
+      "y": 230,
+      "color": "#184A3D",
+      "font_size_pt": 22,
+      "arrow_to": [210, 230]
+    },
+    {
+      "text": "motor + load cell",
+      "x": 680,
+      "y": 480,
+      "color": "#B45309",
+      "font_size_pt": 22,
+      "arrow_to": [520, 440]
+    },
+    {
+      "text": "narrow beam",
+      "x": 110,
+      "y": 700,
+      "color": "#1E293B",
+      "font_size_pt": 22,
+      "arrow_to": [180, 605]
+    },
+    {
+      "text": "(2.5 × 12.7 cm)",
+      "x": 110,
+      "y": 730,
+      "color": "#64748B",
+      "font_size_pt": 18
+    },
+    {
+      "text": "Oculus Rift DK2",
+      "x": 830,
+      "y": 100,
+      "color": "#4B4967",
+      "font_size_pt": 22,
+      "arrow_to": [950, 90]
+    },
+    {
+      "text": "20° visual rotation",
+      "x": 1300,
+      "y": 410,
+      "color": "#4B4967",
+      "font_size_pt": 22,
+      "arrow_to": [1240, 220]
+    }
+  ],
+  "scale_bars": []
+}

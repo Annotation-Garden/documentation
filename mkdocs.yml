@@ -158,6 +158,9 @@ nav:
       - API Reference: projects/hedit/api-reference.md
       - Python API: projects/hedit/python-api.md
       - Telemetry: projects/hedit/telemetry.md
+      - Presentations:
+        - projects/hedit/presentations/index.md
+        - Annotate Those Steps: projects/hedit/presentations/annotate-those-steps.md
     - Image Annotation:
       - projects/image-annotation/index.md
       - API Reference: projects/image-annotation/api-reference.md

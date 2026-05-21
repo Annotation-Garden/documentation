@@ -4,7 +4,7 @@ Talks and slide decks about HEDit, MoBI annotation, and the Annotation Garden In
 
 | Date | Venue | Title | Description |
 |------|-------|-------|-------------|
-| 2026 | TBD | [Annotate Those Steps](annotate-those-steps.md) | How to curate analysis-ready Mobile Brain/Body Imaging (MoBI) datasets. Case study: Peterson and Ferris (2018) perturbed beam-walking dataset (ds003739). |
+| 2026-05-21 | TBD | [Annotate Those Steps](annotate-those-steps.md) | How to curate analysis-ready Mobile Brain/Body Imaging (MoBI) datasets. Case study: Peterson and Ferris (2018) perturbed beam-walking dataset (ds003739). Recording to follow on YouTube. |
 
 ---
 

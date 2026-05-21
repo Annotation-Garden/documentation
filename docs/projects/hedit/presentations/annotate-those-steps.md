@@ -2,11 +2,21 @@
 
 A talk on the Mobile Brain/Body Imaging (MoBI) annotation gap and how the HEDit + Annotation Garden Initiative closes it. Case study: Peterson and Ferris (2018) perturbed beam-walking dataset (ds003739).
 
+**Date:** 21 May 2026  ·  **Recording:** YouTube link will be added here within 48 hours of the talk.
+
+## Recording
+
+<div class="embed-container">
+  <div class="recording-placeholder">
+    YouTube recording will appear here within 48 hours of the talk (21 May 2026).
+  </div>
+</div>
+
 ## Interactive slides
 
 <div class="embed-container">
   <iframe
-    src="./slides/annotate-those-steps/presentation.html?presentation=./annotate-those-steps.json"
+    src="../slides/annotate-those-steps/presentation.html?presentation=./annotate-those-steps.json"
     title="Annotate Those Steps -- HEDit for MoBI"
     frameborder="0"
     allowfullscreen>
@@ -44,6 +54,22 @@ A talk on the Mobile Brain/Body Imaging (MoBI) annotation gap and how the HEDit 
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 3px;
   background: var(--md-code-bg-color);
+}
+.recording-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  color: var(--md-default-fg-color--light);
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  font-style: italic;
 }
 </style>
 
